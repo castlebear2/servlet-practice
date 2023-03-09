@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -33,7 +33,14 @@
 		<label>자기소개:</label>
 		<textarea name="profile"></textarea>
 		
-		
+		<br><br>
+		<label>취미:</label>
+		<br><br>
+		코딩: <input type="checkbox" name="hobby" value="coding">
+		술먹기: <input type="checkbox" name="hobby" value="drinking">
+		요리: <input type="checkbox" name="hobby" value="cooking">
+		수영: <input type="checkbox" name="hobby" value="swimming">
+		  
 		<br><br>
 		<input type="submit" value="회원가입">
 	</form>
