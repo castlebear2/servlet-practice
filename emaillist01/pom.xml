@@ -5,16 +5,15 @@
 		<artifactId>servlet-practice</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>helloweb</artifactId>
+	<artifactId>emaillist01</artifactId>
 	<packaging>war</packaging>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<maven.complier.source>17</maven.complier.source>
-		<maven.complier.target>17</maven.complier.target> 
-	</properties>
-	
 	<dependencies>
+		<!-- MariaDB JDBC Driver -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.0.8</version>
+		</dependency>
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -30,6 +29,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>helloweb</finalName>
+		<finalName>emaillist01</finalName>
 	</build>
 </project>
