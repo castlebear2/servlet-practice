@@ -5,8 +5,15 @@
 		<artifactId>servlet-practice</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>helloweb</artifactId> 
+	<artifactId>helloweb</artifactId>
 	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+		<maven.complier.source>17</maven.complier.source>
+		<maven.complier.target>17</maven.complier.target> 
+	</properties>
+	
 	<dependencies>
 		<!-- servlet -->
 		<dependency>
