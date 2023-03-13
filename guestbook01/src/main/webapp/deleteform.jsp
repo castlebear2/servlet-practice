@@ -12,8 +12,8 @@
 <title>방명록</title>
 </head>
 <body>
-	<form method="post" action="">
-		<input type='hidden' name="no" value="<%= no%>">
+	<form method="post" action="/guestbook01/delete.jsp ">
+		<input type='hidden' name="no" value="<%=no%>">
 		<table>
 			<tr>
 				<td>비밀번호</td>

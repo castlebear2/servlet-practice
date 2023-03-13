@@ -20,7 +20,7 @@ public class GuestBookDao {
 		try {
 			conn = getConnection();
 
-			String sql = "select no, name, regDate, message from guestbook order by regDate desc;";
+			String sql = "select no, name, message, date_format(reg_date, '%Y/%m/%d %H:%i:%s') from guestbook order by reg_date desc;";
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
@@ -29,8 +29,8 @@ public class GuestBookDao {
 				GuestBookVo vo = new GuestBookVo();
 				vo.setNo(rs.getLong(1));
 				vo.setName(rs.getString(2));
-				vo.setRegDate(rs.getString(3));
-				vo.setMessage(rs.getString(4));
+				vo.setMessage(rs.getString(3));
+				vo.setRegDate(rs.getString(4));
 
 				result.add(vo);
 			}
@@ -61,12 +61,13 @@ public class GuestBookDao {
 		try {
 			conn = getConnection();
 
-			String sql = "insert into guestbook values(null, ?, ?, ?)";
+			String sql = "insert into guestbook values(null, ?, ?, ?, now())";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, vo.getName());
-			pstmt.setString(2, vo.getRegDate());
+			pstmt.setString(2, vo.getPassword());
 			pstmt.setString(3, vo.getMessage());
+			pstmt.setString(4, vo.getRegDate());
 
 			pstmt.executeUpdate();
 
@@ -86,17 +87,18 @@ public class GuestBookDao {
 		}
 	}
 
-	public void deleteByPassword(String password) {
+	public void deleteByPassword(String no, String password) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
 		try {
 			conn = getConnection();
 
-			String sql = "delete from guestbook where password = ?";
+			String sql = "delete from guestbook where password = ? and no = ?";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, password);
+			pstmt.setString(2, no);
 
 			pstmt.executeUpdate();
 
@@ -122,7 +124,7 @@ public class GuestBookDao {
 
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
-			String url = "jdbc:mariadb://192.168.35.137:3307/webdb?charset=utf8";
+			String url = "jdbc:mariadb://192.168.0.88:3307/webdb?charset=utf8";
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패:" + e);
