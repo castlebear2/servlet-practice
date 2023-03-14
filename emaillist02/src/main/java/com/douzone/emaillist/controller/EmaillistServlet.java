@@ -19,13 +19,13 @@ public class EmaillistServlet extends HttpServlet {
 		
 		String action = request.getParameter("a");
 		if("form".equals(action)) {		
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/form.jsp");
 			rd.forward(request, response);
 		} else {
 			List<EmaillistVo> list = new EmaillistDao().findAll();
 			request.setAttribute("list", list);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
 			rd.forward(request, response);
 		}
 	}
