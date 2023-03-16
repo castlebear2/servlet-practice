@@ -2,12 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.douzone</groupId>
 	<artifactId>servlet-practice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>  
 	<packaging>pom</packaging>
 		<build>
-		<finalName>helloweb</finalName>
 		<plugins>
-			<plugin>
+			<plugin> 
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.2</version>
