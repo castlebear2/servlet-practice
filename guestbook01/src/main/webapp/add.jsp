@@ -17,5 +17,5 @@
 	
 	new GuestBookDao().insert(vo);
 	
-	response.sendRedirect("/guestbook01/index.jsp");
+	response.sendRedirect(request.getContextPath());
 %>
