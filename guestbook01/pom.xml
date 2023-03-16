@@ -7,14 +7,12 @@
 	</parent>
 	<artifactId>guestbook01</artifactId>
 	<packaging>war</packaging>
-	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
 		<maven.complier.source>17</maven.complier.source>
 		<maven.complier.target>17</maven.complier.target>
 	</properties>
-	
 	<dependencies>
 		<!-- MariaDB JDBC Driver -->
 		<dependency>
@@ -36,7 +34,6 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
 	<build>
 		<finalName>guestbook01</finalName>
 		<plugins>
@@ -44,6 +41,15 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>${tomcat.deploy.url}</url>
+					<server>tomcat-douzone2023</server>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
