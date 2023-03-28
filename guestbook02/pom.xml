@@ -11,8 +11,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-		<maven.complier.source>17</maven.complier.source>
-		<maven.complier.target>17</maven.complier.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	
 	<dependencies>
